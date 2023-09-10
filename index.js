@@ -4,7 +4,7 @@ const app = express()
 
 const path = require('path')
 //add template engine
-const hbs = require ('express-handlebars');
+const hbs = require("express-handlebars");
 //setup template engine directory and files extension
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -33,6 +33,20 @@ con.connect(function(err) {
     if (err) throw err;
     console.log("connected to joga_mysql db");
 })
+
+//show all articles - index page
+app.get('/',(req,res)=> {
+    let query = "SELECT*FROM article";
+    let articles = []
+    con.query(query,(err, result) => {
+        if (err) throw err;
+        articles = result
+        res.render('index',{
+            articles:articles
+        })
+    })
+});
+
 
 //app start point
 app.listen(3000, () => {

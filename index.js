@@ -47,6 +47,20 @@ app.get('/',(req,res)=> {
     })
 });
 
+//show article by this slug
+app.get('/article/:slug',(req,res) => {
+    let query = `SELECT * from article WHERE slug="${req.params.slug}"`
+    let article
+    con.query(query,(err,result)=>{
+        if (err) throw err;
+        article=result
+        console.log(article)
+        res.render('article',{
+            article:article
+        })
+    });
+});
+
 
 //app start point
 app.listen(3000, () => {

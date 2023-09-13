@@ -14,7 +14,12 @@ const getAllArticles = (req, res) => {
 };
 //show article by this slug
 const getArticleSlug = (req, res) => {
-    let query = `SELECT * FROM article, author WHERE article.slug='${req.params.slug}' AND article.author_id=author.author_id`
+    let query = `SELECT *,
+                article.name as article_name,
+                author.name as author_name
+                FROM article
+                INNER JOIN author
+                ON author.id = article.author_id WHERE slug="${req.params.slug}"`
     let article
     con.query(query, (err, result) => {
         if (err) throw err;

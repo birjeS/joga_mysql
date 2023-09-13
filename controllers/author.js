@@ -2,8 +2,8 @@ const con = require('../utils/db')
 
 //show article by this slug
 const getAuthorName = (req, res) => {
-    let article_query = `SELECT * FROM article, author WHERE author.author_id='${req.params.author_id}' AND article.author_id=author.author_id;`
-    let author_query = `SELECT author_name FROM author WHERE author.author_id=\'${req.params.author_id}';`
+    let article_query = `SELECT * FROM article, author WHERE author.id='${req.params.author_id}' AND article.author_id='${req.params.author_id}';`
+    let author_query = `SELECT name FROM author WHERE id='${req.params.author_id}';`
     let author
     let articles = []
 

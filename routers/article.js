@@ -5,4 +5,4 @@ const articleController = require('../controllers/article')
 router.get('/', articleController.getAllArticles)
 router.get('/article/:slug', articleController.getArticleSlug)
 
-module.exports = router
+module.exports = router;

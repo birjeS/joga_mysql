@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -13,10 +13,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="4017084b-f968-48bb-916c-cb011a1b9127">
-      <console name="Connection" type="STANDARD" schema="joga_mysql" session="Main"><![CDATA[INSERT INTO `article` (`id`,`slug`, `name`) VALUES
-(1,'introduction-to-ashtanga', 'Ashley Galvin'),
-(2, 'morning-vinyasa-flow-routine', 'Patrick Beach'),
-(3,'secrets-of-a-yoga-teacher', 'MacKenzie Miller');]]></console>
+      <console name="Connection" type="STANDARD" schema="joga_mysql" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
